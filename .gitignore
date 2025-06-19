@@ -1,3 +1,9 @@
+# Build
+cmake-build-debug
+
+# IntelliJ
+.idea
+
 # Prerequisites
 *.d
 
