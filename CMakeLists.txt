@@ -17,18 +17,27 @@ if(NOT Catch2_FOUND)
     FetchContent_MakeAvailable(Catch2)
 endif()
 
-# Create the test executable
+# Create the sorting test executable
 add_executable(sorting_tests
         test_sorting.cpp
         SortingAlgorithms.cpp
 )
 
-# Link Catch2
-target_link_libraries(sorting_tests PRIVATE Catch2::Catch2)
+# Create the recursion test executable
+add_executable(recursion_tests
+        test_recursion.cpp
+        RecursionTypes.cpp
+)
 
-# Include directories
+# Link Catch2 to both executables
+target_link_libraries(sorting_tests PRIVATE Catch2::Catch2)
+target_link_libraries(recursion_tests PRIVATE Catch2::Catch2)
+
+# Include directories for both executables
 target_include_directories(sorting_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(recursion_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Enable testing
 enable_testing()
 add_test(NAME sorting_algorithm_tests COMMAND sorting_tests)
+add_test(NAME recursion_algorithm_tests COMMAND recursion_tests)
