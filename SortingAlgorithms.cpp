@@ -17,7 +17,6 @@ void SortingAlgorithms::selectionSort(std::vector<int>& arr, bool ascending) {
 // Insertion Sort Implementation
 void SortingAlgorithms::insertionSort(std::vector<int>& s, bool ascending) {
     int n = s.size();
-    if (n < 2) return;
     for (int i = 1; i < n; ++i) {
         int ins_val = s[i];
         int j = i - 1;
