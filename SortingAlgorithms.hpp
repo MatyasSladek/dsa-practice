@@ -31,7 +31,7 @@ public:
      * @param arr Vector to be sorted
      * @param ascending Sort in ascending order if true, descending if false
      */
-    static void insertionSort(std::vector<int>& arr, bool ascending = true);
+    static void insertionSort(std::vector<int>& s, bool ascending = true);
 
     /**
      * @brief Quick sort implementation

@@ -15,9 +15,18 @@ void SortingAlgorithms::selectionSort(std::vector<int>& arr, bool ascending) {
 }
 
 // Insertion Sort Implementation
-void SortingAlgorithms::insertionSort(std::vector<int>& arr, bool ascending) {
-    // TODO: Implement insertion sort algorithm
-    // Hint: Insert each element into its correct position in the sorted portion
+void SortingAlgorithms::insertionSort(std::vector<int>& s, bool ascending) {
+    int n = s.size();
+    if (n < 2) return;
+    for (int i = 1; i < n; ++i) {
+        int ins_val = s[i];
+        int j = i - 1;
+        while (j >= 0 && ((s[j] > ins_val && ascending) || (s[j] < ins_val && !ascending))) {
+            s[j + 1] = s[j];
+            --j;
+        }
+        s[j + 1] = ins_val;
+    }
     // Time complexity: O(n²), Space complexity: O(1)
 }
 
